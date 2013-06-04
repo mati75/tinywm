@@ -4,6 +4,8 @@ DATAROOTDIR = $(PREFIX)/share
 THISMAKEFILE=$(lastword $(MAKEFILE_LIST))
 SRC_DIR=$(dir $(THISMAKEFILE))
 DESKTOPFILESDIR = $(DATAROOTDIR)/applications
+MANDIR = $(DATAROOTDIR)/man
+MAN1DIR = $(MANDIR)/man1
 CFLAGS?=-Os -pedantic -Wall
 
 all:
