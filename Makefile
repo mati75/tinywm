@@ -1,5 +1,9 @@
 BINDIR?=/usr/bin
 PREFIX?=/usr/X11R6
+DATAROOTDIR = $(PREFIX)/share
+THISMAKEFILE=$(lastword $(MAKEFILE_LIST))
+SRC_DIR=$(dir $(THISMAKEFILE))
+DESKTOPFILESDIR = $(DATAROOTDIR)/applications
 CFLAGS?=-Os -pedantic -Wall
 
 all:
@@ -8,7 +12,7 @@ all:
 install:
 	install -d ${DESTDIR}${BINDIR}
 	install -m 755 tinywm ${DESTDIR}${BINDIR}
+	install -m 0644 ${SRC_DIR}/tinywm.desktop ${DESTDIR}${DESKTOPFILESDIR}/
 		
 clean:
 	rm -f tinywm
-
